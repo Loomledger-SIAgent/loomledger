@@ -1,0 +1,106 @@
+catalog_version: "2026.10.17.1"
+models:
+  - provider: openrouter_decisions
+    name: typesafe/jev-1.14
+    version: "1.14"
+    capabilities:
+      kinds: ["decide"]
+      decision_primitives: ["noul", "choice", "score", "box"]
+      tools: false
+      structured_output: "native"
+      vision: true
+      default_context: 8192
+      max_context: 262144
+    pricing:
+      input_per_1m_usd: "0.042"
+      output_per_1m_usd: "0.00"
+      cached_input_per_1m_usd: "0.021"
+
+  - provider: typesafe
+    name: jev
+    version: "1.13.0"
+    capabilities:
+      kinds: ["decide"]
+      decision_primitives: ["noul", "choice", "score"]
+      tools: false
+      structured_output: "native"
+      vision: false
+      default_context: 8192
+      max_context: 32768
+    pricing:
+      input_per_1m_usd: "0.042"
+      output_per_1m_usd: "0.00"
+
+  - provider: openrouter_decisions
+    name: openai/gpt-6-luna-decisions
+    version: "2026-10"
+    capabilities:
+      kinds: ["decide"]
+      decision_primitives: ["noul", "choice", "score"]
+      tools: false
+      structured_output: "native"
+      vision: true
+      default_context: 32768
+      max_context: 128000
+    pricing:
+      input_per_1m_usd: "0.10"
+      output_per_1m_usd: "0.00"
+
+  - provider: anthropic
+    name: claude-3-7-sonnet
+    version: "20250219"
+    capabilities:
+      kinds: ["generate"]
+      tools: true
+      structured_output: "tool"
+      vision: true
+      default_context: 200000
+      max_context: 200000
+    pricing:
+      input_per_1m_usd: "3.00"
+      output_per_1m_usd: "15.00"
+      cached_input_per_1m_usd: "0.30"
+
+  - provider: openai_compat
+    name: gpt-4o
+    version: "2024-11-20"
+    capabilities:
+      kinds: ["generate"]
+      tools: true
+      structured_output: "native"
+      vision: true
+      default_context: 128000
+      max_context: 128000
+    pricing:
+      input_per_1m_usd: "2.50"
+      output_per_1m_usd: "10.00"
+      cached_input_per_1m_usd: "1.25"
+
+  - provider: ollama
+    name: qwen3.6-27b
+    version: "27b-q4_K_M"
+    capabilities:
+      kinds: ["generate"]
+      tools: true
+      structured_output: "json_mode"
+      vision: false
+      default_context: 32768
+      max_context: 32768
+    pricing:
+      input_per_1m_usd: "0.00"
+      output_per_1m_usd: "0.00"
+
+  - provider: fake
+    name: scripted
+    version: "1.0.0"
+    capabilities:
+      kinds: ["generate", "decide", "embed"]
+      decision_primitives: ["noul", "choice", "score", "box"]
+      tools: true
+      structured_output: "native"
+      vision: true
+      default_context: 100000
+      max_context: 1000000
+    pricing:
+      input_per_1m_usd: "0.00"
+      output_per_1m_usd: "0.00"
