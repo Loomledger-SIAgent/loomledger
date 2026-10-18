@@ -16,6 +16,10 @@ dependencies = [
     "httpx>=0.27.0",
 ]
 
+[project.urls]
+Repository = "https://github.com/Loomledger-SIAgent/loomledger"
+Documentation = "https://github.com/Loomledger-SIAgent/loomledger-docs"
+
 [project.optional-dependencies]
 dev = [
     "pytest>=8.2.0",
